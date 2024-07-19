@@ -25,7 +25,6 @@ ENV VIRTUAL_ENV=/app/.venv \
 
 COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 
-COPY ./streamlit_agent ./streamlit_agent
-
-
-CMD ["streamlit", "run", "streamlit_agent/chat_pandas_df.py", "--server.port", "8051"]
+#COPY ./streamlit_agent ./streamlit_agent
+#CMD ["streamlit", "run", "streamlit_agent/mrkl_demo.py", "--server.port", "8051"]
+CMD ["streamlit", "run", "streamlit_agent_router.py", "--server.port", "8051"]
